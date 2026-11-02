@@ -51,8 +51,4 @@ The evaluation will determine whether UniGuide AI can retrieve relevant informat
 
 
 
-To reduce this risk, UniGuide AI will use document-grounded answer generation, source citations, and an insufficient-evidence fallback mechanism. A prepared evaluation dataset will also be used to check whether answers are supported by official documents.
 
----
-
-**End of Week 2 Requirements Specification**
