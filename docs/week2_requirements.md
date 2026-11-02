@@ -1,7 +1,3 @@
-# Week 2 — Part A - Refine Project Framing, Define Application Scope, and Write Requirements
-## UniGuide AI — AI-Powered University FAQ Assistant
-
-
 # Section 0 — Project Framing & Application Scope Checkpoint
 
 ## 0.1 Problem Evidence
