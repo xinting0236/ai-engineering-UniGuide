@@ -1,6 +1,7 @@
 # Section 1 — Functional Requirements (FR)
 
 Requirements Specification - UniGuide AI 
+
 Version: 1.0
 
 | ID | Requirement — The System SHALL | Scope Boundary — SHALL NOT |
