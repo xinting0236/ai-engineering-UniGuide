@@ -1,3 +1,7 @@
+# Week 2 — Part A - Refine Project Framing, Define Application Scope, and Write Requirements
+## UniGuide AI — AI-Powered University FAQ Assistant
+
+
 # Section 0 — Project Framing & Application Scope Checkpoint
 
 ## 0.1 Problem Evidence
@@ -49,6 +53,40 @@ UniGuide AI addresses this practical limitation by integrating semantic document
 
 The evaluation will determine whether UniGuide AI can retrieve relevant information from official UTM documents, generate correct and grounded answers, provide accurate source citations, identify questions that cannot be sufficiently answered, and maintain acceptable response latency.
 
+---
 
+# Section 1 — Functional Requirements (FR)
 
+# Requirements Specification - UniGuide
+
+Version: 1.0  
+
+| ID | Requirement — The System SHALL | Scope Boundary — SHALL NOT |
+|---|---|---|
+| FR1 | Answer student questions about academic calendars, course registration procedures, academic regulations, and student services using the prepared UTM knowledge base. | Provide answers about topics that are not covered by the official UTM knowledge base. |
+| FR2 | Retrieve relevant information from official UTM documents and webpages based on the meaning and context of students' natural-language questions. | Retrieve or rely on unrelated or unverified information as authoritative UTM information. |
+| FR3 | Generate answers based on the retrieved document passages and provide source citations so students can verify the information. | Present unsupported information as if it came from an official UTM document. |
+| FR4 | Identify questions for which the knowledge base does not contain sufficient supporting information and provide an appropriate fallback response. | Guess or generate answers when sufficient supporting evidence is unavailable. |
+| FR5 | Present answers in clear and understandable language appropriate for UTM undergraduate students. | Make personalised academic decisions or perform university administrative transactions. |
+
+---
+
+# Section 2 — Non-Functional Requirements (NFR)
+
+| ID | Quality Attribute | Requirement | Measurement Method | Metric | Threshold |
+|---|---|---|---|---|---|
+| NFR1 | Correctness | The system shall generate answers that are factually consistent with the official UTM source documents. | Evaluate a prepared dataset of questions against verified reference answers. | Answer correctness rate | ≥ 85% |
+| NFR2 | Performance | The system shall provide responses within an acceptable time for interactive student enquiries. | Measure end-to-end response time across a test set of questions. | 90th percentile response latency (p90) | ≤ 5 seconds |
+| NFR3 | Retrieval Reliability | The system shall retrieve relevant document passages for student questions. | Compare retrieved passages against manually identified relevant supporting passages. | Recall@5 | ≥ 80% |
+| NFR4 | Maintainability | The system shall allow updated official documents to be incorporated into the knowledge base when university information changes. | Perform a document update test and measure the time required to reflect the changes. | Document update time | ≤ 10 minutes per document |
+
+---
+
+# Section 3 — Responsible AI Requirements (RAI)
+
+| ID | Responsible AI Risk | Requirement | Measurement Method | Metric | Threshold |
+|---|---|---|---|---|---|
+| RAI1 | Hallucination and Incorrect Information | The system shall provide answers supported by retrieved official UTM documents and use a fallback response when sufficient evidence is unavailable. | Test with answerable and unanswerable questions and manually verify answers against source documents. | Supported-answer rate for answerable questions; correct fallback rate for unanswerable questions. | ≥ 95% supported answers; ≥ 95% correct fallback |
+| RAI2 | Outdated Information | The system shall display available source dates or document versions and identify information that has not been verified as current. | Test documents with different publication or update dates and inspect the displayed source information. | Source-date/version display rate when metadata is available. | 100% |
+| RAI3 | Unequal Answer Quality | The system shall provide consistent answer quality for questions with different wording and levels of clarity. | Test equivalent questions using different phrasings and compare the correctness of their answers. | Answer correctness rate across paraphrased question sets. | ≥ 80% |
 
