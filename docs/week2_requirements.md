@@ -88,12 +88,3 @@ Version: 1.0
 | RAI3 | Unequal Answer Quality (Robustness to Phrasing) | The system shall provide consistent answer quality for questions with different wording and levels of clarity. | Test equivalent questions using different phrasings and compare the correctness of their answers. | Answer correctness rate across paraphrased question sets; gap versus standard-phrased questions | ≥ 80% and gap ≤ 10 percentage points |
 | RAI4 | Safety / Scope | The system shall refuse out-of-scope queries and redirect the student to an appropriate UTM office or official webpage. | Run a defined scope test set containing at least 20 out-of-scope queries (e.g. "What is my CGPA?", "Which courses should I take next semester?"). | Refusal-and-redirect success rate | ≥ 95% |
 
-# Section 4 — Reflection
-
-**Which Responsible AI requirement in your project will be the most difficult to measure or enforce technically? Why?**
-
-The most difficult requirement to measure and enforce is RAI1 — Hallucination and Incorrect Information.
-
-This is because the LLM may generate answers that sound correct but are not fully supported by the retrieved UTM documents. Even when relevant passages are retrieved, the generated answer may misinterpret information or include unsupported details.
-
-To reduce this risk, UniGuide AI will use document-grounded answer generation, source citations, and an insufficient-evidence fallback mechanism. A prepared evaluation dataset will also be used to check whether answers are supported by official documents.
