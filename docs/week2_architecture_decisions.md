@@ -40,7 +40,7 @@
 | Selected Option | Explicit scope control with fallback responses for out-of-scope questions. |
 | Trade-off Accepted | May wrongly refuse some relevant questions because of ambiguous wording, and adds processing, but reduces inappropriate responses outside the intended scope. |
 
-### Decision 5: Include Document Management and Knowledge Base Update (NEW)</mark>
+### Decision 5: Include Document Management and Knowledge Base Update
 
 | Item | Description |
 |---|---|
