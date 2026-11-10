@@ -6,23 +6,23 @@
 
 ---
 
-## A1 — Requirements → data needs
+## A1 — From Topic 2 requirements to data needs 
 
 | Requirement ID | Needed information / feature | Candidate source | Why usable / constraint |
 |---|---|---|---|
-| FR1 / FR2 | Academic calendar dates, course registration procedures, academic regulations, student services information | S01 calendar, S02 regulations, S03 handbook, S04 and S05 registration manuals | Official UTM publications covering all four scope areas. Constraint: S03 is dated 2010, and the S04 and S05 manuals contain image-only content. |
-| RAI2 | Source publication date, edition, version and retrieval date | PDF metadata (creation date), edition statements inside the documents, my download date | Dates exist for S01, S02 and S03 and are partial for S04 and S05, so some sources will need the "currency not verified" flag. |
-| NFR4 | A repeatable way to re-ingest an updated document | Same file names with a version or date recorded in this inventory and in the metadata manifest | Pipeline must reprocess one file without rebuilding the rest. |
+| FR1 / FR2 | Academic calendar dates, course registration procedures, academic regulations | S01 calendar, S02 regulations, S03 handbook, S04 and S05 registration manuals | Official UTM publications covering all four scope areas. Constraint: S03 is dated 2010, and the S04 and S05 manuals contain image-only content. |
+| RAI2 | Source publication date, edition, version and retrieval date | PDF metadata (creation date), edition statements inside the documents, my download date | DHelps identify outdated or unverified information and prevents old documents from being treated as current. |
+| NFR4 | Source file identity, version and update history | Same file names with a version or date recorded in this inventory and in the metadata manifest |Supports repeatable document ingestion and allows individual documents to be updated without rebuilding the entire dataset. |
 
 ---
 
-## A4 — Data inventory
+## A4 — Data inventory checkpoint
 
 | Source ID | Filename / URL | Type and purpose | Version / date / owner | Access / rights | Inspection evidence |
 |---|---|---|---|---|---|
 | S01 | `utm_academic_calendar_2026_2027.pdf` — https://amd.utm.my/wp-content/uploads/sites/460/2026/05/Final_Kalendar-Akademik-Sarjana-Muda.Sarjana.Kedoktoran-20262027-14.5.2026-pembetulan.pdf | PDF, table-based calendar (English page + Malay weekly breakdown). Supports FR1/FR2 (academic calendar). | **Academic Calendar 2026/2027**, Bachelor, Master and Doctoral Programme. PDF created 12 May 2026, modified 13 May 2026. The URL filename ends in "14.5.2026-pembetulan" (Malay for "correction"), so this is a corrected version dated 14 May 2026. Owner: Universiti Teknologi Malaysia (UTM). | Public official UTM document. Used for coursework only; raw file not redistributed. | 2 pages, 8,335 characters. Text layer present on both pages. Page 1 is in English and page 2 is in Malay. Layout loss and errors are listed below. |
 | S02 | `utm_academic_regulations.pdf` — https://ugs.utm.my/wp-content/uploads/sites/8/2026/05/FT-UG-ACADEMIC-REGULATIONS-16th-edition.pdf | PDF book, undergraduate academic regulations. Supports FR1/FR2 (academic regulations, registration rules). | **Academic Regulations, Full-Time Undergraduate Studies Programme, 16th Edition, 2026.** Editors: Mohd Shafry Mohd Rahim and Intan Zaurah Mat Darus; co-editor Mahyuddin Arsat. Publisher: Penerbit UTM. PDF created 7 May 2026. | Public official UTM publication, copyright reserved. Used for coursework only; raw file not redistributed. | 81 pages, 105,131 characters; 75 `/gid` glyph codes (all on the title page). Text layer present. Pages with almost no text: 1, 2, 3, 11, 13, 15, 81 (expected to be cover and divider pages; confirm). The title on page 4 extracts as `/gid…` glyph codes. |
-| S03 | `utm_handbook.pdf` — https://www2.utm.my/wp-content/uploads/sites/8/2011/01/buku_acad.advising170810_a4.pdf | PDF booklet, *Academic Advising: Ensuring Student Success*. Supports FR1/FR2 (registration procedure, student services contacts). | **2010 edition**, Office of Undergraduate Studies, UTM. PDF created 17 August 2010 (the URL path shows it was uploaded in January 2011). | Public UTM publication, all rights reserved. Used for coursework only; raw file not redistributed. | 28 pages, 39,859 characters. Text layer present. Pages with almost no text: 1 (cover) and 28 (back cover). The page 5 registration flowchart is an image. |
+| S03 | `utm_handbook.pdf` — https://www2.utm.my/wp-content/uploads/sites/8/2011/01/buku_acad.advising170810_a4.pdf | PDF booklet, *Academic Advising: Ensuring Student Success*. Supports FR1/FR2 (registration procedure). | **2010 edition**, Office of Undergraduate Studies, UTM. PDF created 17 August 2010 (the URL path shows it was uploaded in January 2011). | Public UTM publication, all rights reserved. Used for coursework only; raw file not redistributed. | 28 pages, 39,859 characters. Text layer present. Pages with almost no text: 1 (cover) and 28 (back cover). The page 5 registration flowchart is an image. |
 | S04 | `utm_User-Manual_NewStudent_Course-Registration_update-202620271.pdf` — https://amd.utm.my/wp-content/uploads/sites/460/2026/10/User-Manual_NewStudent_Course-Registration_update-202620271.pdf | PDF slide deck, step-by-step course registration for new full-time bachelor's students. Supports FR1/FR2 (course registration). | Filename says "update 2026/2027". PDF created 5 October 2026, modified 6 October 2026. Owner: Academic Management Division (AMD), UTM. Screenshots show session 202420251 and 2024 dates. | Public UTM document. Used for coursework only; raw file not redistributed. | 24 pages, 3,752 characters. Only slide text and captions were extracted; screenshots were not. Pages with almost no text: 1, 2, 5 (title, roadmap and image-heavy slides). |
 | S05 | `utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf` — https://amd.utm.my/wp-content/uploads/sites/460/2026/10/User-Manual_Course-Registration-Senior-Student_update202620271.pdf | PDF slide deck, step-by-step course registration for full-time bachelor's senior students. Supports FR1/FR2 (course registration). | Filename says "update 2026/2027". PDF created 6 October 2026. Owner: Academic Management Division (AMD), UTM. Screenshots show session 202420252; an example slip is dated 3 Jan 2026. | Public UTM document. Used for coursework only; raw file not redistributed. | 10 pages, 2,048 characters. Every page has some text, but tables and the registration slip are image-only. |
 
@@ -70,5 +70,5 @@
 ## Checkpoint A
 
 - **Which Topic 2 requirements need this data?** FR1 and FR2 (answering from official UTM documents), RAI2 (dates and versions), and NFR4 (updating sources).
-- **Loaded sample shown?** Yes: real extracted text from S01 (page 1) and S02 (pages 20 and 40), described above. Colab Cell 4 and Cell 4b output confirm this. 🟥 Save screenshots of both outputs to `docs/evidence/` in your repository.
+- **Loaded sample shown?** Yes: real extracted text from S01 (page 1) and S02 (pages 20 and 40), described above. Colab Cell 4 and Cell 4b output confirm this.
 - **Pathway chosen:** A (PDF documents). The other five pathways are not used because the project only needs text documents.
