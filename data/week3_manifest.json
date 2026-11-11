@@ -1,0 +1,91 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-11T13:58:53.467069+00:00",
+  "records": [
+    {
+      "source_id": "S01",
+      "source_filename": "utm_academic_calendar_2026_2027.pdf",
+      "source_sha256": "991821afb6fa5497a80853654e05b7d86ca65a69e4267a8a907d229ad3c1dc1c",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "cbcd813500b9e4f445a69ec1bfe1a54e83ca2dca07b2263a49132bad9dd4edcd",
+      "processing_note": "page-aware-paragraph-packing; max_chars=1200; footers removed; whitespace normalised; image-only pages skipped",
+      "source_version": "Academic Calendar 2026/2027 (corrected version) (2026-05-14)",
+      "currency_status": "current_2026",
+      "access_rights": "Public official UTM document; coursework use only; raw file not redistributed",
+      "known_limitations": "Page 2 (Malay) has date errors; treat page 1 (English) as primary.",
+      "skipped_pages": [],
+      "status": "Prepared; quality review pending"
+    },
+    {
+      "source_id": "S02",
+      "source_filename": "utm_academic_regulations.pdf",
+      "source_sha256": "d2743dfad87d3be3393732e0416088ad62cf4afb9e6f7355eac47ab715de6a04",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "cbcd813500b9e4f445a69ec1bfe1a54e83ca2dca07b2263a49132bad9dd4edcd",
+      "processing_note": "page-aware-paragraph-packing; max_chars=800; footers removed; whitespace normalised; image-only pages skipped",
+      "source_version": "Academic Regulations, Full-Time UG, 16th Edition (2026)",
+      "currency_status": "current_2026",
+      "access_rights": "Public official UTM document; coursework use only; raw file not redistributed",
+      "known_limitations": "PDF page = printed page + 17.",
+      "skipped_pages": [
+        1,
+        2,
+        3,
+        11,
+        13,
+        15,
+        81
+      ],
+      "status": "Prepared; quality review pending"
+    },
+    {
+      "source_id": "S03",
+      "source_filename": "utm_handbook.pdf",
+      "source_sha256": "2e4c4e220206f0f128ad70ee5af62c6a4ae285b1f3df71484d21b1d1e8248fcc",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "cbcd813500b9e4f445a69ec1bfe1a54e83ca2dca07b2263a49132bad9dd4edcd",
+      "processing_note": "page-aware-paragraph-packing; max_chars=800; footers removed; whitespace normalised; image-only pages skipped",
+      "source_version": "Academic Advising: Ensuring Student Success (2010) (2010)",
+      "currency_status": "currency_not_verified",
+      "access_rights": "Public official UTM document; coursework use only; raw file not redistributed",
+      "known_limitations": "2010 booklet; describes older systems (AIMS 2000).",
+      "skipped_pages": [
+        1,
+        28
+      ],
+      "status": "Prepared; quality review pending"
+    },
+    {
+      "source_id": "S04",
+      "source_filename": "utm_User-Manual_NewStudent_Course-Registration_update-202620271.pdf",
+      "source_sha256": "6440e244e66e470a23b6a6237307575e345d690adc9e7b79c12be6892ab4d73c",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "cbcd813500b9e4f445a69ec1bfe1a54e83ca2dca07b2263a49132bad9dd4edcd",
+      "processing_note": "page-aware-paragraph-packing; max_chars=1200; footers removed; whitespace normalised; image-only pages skipped",
+      "source_version": "New-student registration manual (update 2026/2027) (2026-10-05)",
+      "currency_status": "currency_not_verified",
+      "access_rights": "Public official UTM document; coursework use only; raw file not redistributed",
+      "known_limitations": "Slide deck; screenshots (image-only) show 2024 sessions.",
+      "skipped_pages": [
+        1,
+        2,
+        5
+      ],
+      "status": "Prepared; quality review pending"
+    },
+    {
+      "source_id": "S05",
+      "source_filename": "utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+      "source_sha256": "1f37688b7836ba7f324ef6078395c854cff4dcad20e7ada38118828955b7644c",
+      "prepared_output": "data/processed/prepared_text.jsonl",
+      "prepared_sha256": "cbcd813500b9e4f445a69ec1bfe1a54e83ca2dca07b2263a49132bad9dd4edcd",
+      "processing_note": "page-aware-paragraph-packing; max_chars=1200; footers removed; whitespace normalised; image-only pages skipped",
+      "source_version": "Senior-student registration manual (update 2026/2027) (2026-10-06)",
+      "currency_status": "currency_not_verified",
+      "access_rights": "Public official UTM document; coursework use only; raw file not redistributed",
+      "known_limitations": "Slide deck; tables and slip are image-only; screenshots show 2024 sessions.",
+      "skipped_pages": [],
+      "status": "Prepared; quality review pending"
+    }
+  ]
+}
