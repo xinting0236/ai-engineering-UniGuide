@@ -1,0 +1,215 @@
+{
+  "pipeline_version": "week3-v1",
+  "generated_at_utc": "2026-11-12T00:46:35.606842+00:00",
+  "data_type": "documents",
+  "configuration": {
+    "method": "page-aware-paragraph-packing",
+    "min_page_chars": 20,
+    "source_version": "See docs/week3_data_inventory.md (S01-S05)",
+    "access_rights": "Public official UTM documents; coursework use only; raw files not redistributed",
+    "sources": [
+      {
+        "source_id": "S01",
+        "filename": "utm_academic_calendar_2026_2027.pdf",
+        "language_default": "en",
+        "language_by_page": {
+          "1": "en",
+          "2": "ms"
+        },
+        "doc_date": "2026-05-14",
+        "edition": "Academic Calendar 2026/2027 (corrected version)",
+        "currency": "current_2026",
+        "page_offset": 0,
+        "drop": [
+          "^www\\.utm\\.my$"
+        ],
+        "splitter": "calendar",
+        "size": 1200,
+        "note": "Page 2 (Malay) has date errors; treat page 1 (English) as primary."
+      },
+      {
+        "source_id": "S02",
+        "filename": "utm_academic_regulations.pdf",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026",
+        "edition": "Academic Regulations, Full-Time UG, 16th Edition",
+        "currency": "current_2026",
+        "page_offset": 17,
+        "drop": [],
+        "splitter": "paragraph",
+        "size": 800,
+        "note": "PDF page = printed page + 17."
+      },
+      {
+        "source_id": "S03",
+        "filename": "utm_handbook.pdf",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2010",
+        "edition": "Academic Advising: Ensuring Student Success (2010)",
+        "currency": "currency_not_verified",
+        "page_offset": 0,
+        "drop": [
+          "^\\d+ \\| Academic Advising: Ensuring Student Success$"
+        ],
+        "splitter": "paragraph",
+        "size": 800,
+        "note": "2010 booklet; describes older systems (AIMS 2000)."
+      },
+      {
+        "source_id": "S04",
+        "filename": "utm_User-Manual_NewStudent_Course-Registration_update-202620271.pdf",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026-10-05",
+        "edition": "New-student registration manual (update 2026/2027)",
+        "currency": "currency_not_verified",
+        "page_offset": 0,
+        "drop": [
+          "^www\\.utm\\.my$"
+        ],
+        "splitter": "paragraph",
+        "size": 1200,
+        "note": "Slide deck; screenshots (image-only) show 2024 sessions."
+      },
+      {
+        "source_id": "S05",
+        "filename": "utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026-10-06",
+        "edition": "Senior-student registration manual (update 2026/2027)",
+        "currency": "currency_not_verified",
+        "page_offset": 0,
+        "drop": [
+          "^www\\.utm\\.my$"
+        ],
+        "splitter": "paragraph",
+        "size": 1200,
+        "note": "Slide deck; tables and slip are image-only; screenshots show 2024 sessions."
+      }
+    ]
+  },
+  "processing_method": "page-aware-paragraph-packing (per-source max_chars; see configuration)",
+  "sources": [
+    {
+      "path": "/content/week3_project/data/raw/utm_academic_calendar_2026_2027.pdf",
+      "sha256": "991821afb6fa5497a80853654e05b7d86ca65a69e4267a8a907d229ad3c1dc1c"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_academic_regulations.pdf",
+      "sha256": "d2743dfad87d3be3393732e0416088ad62cf4afb9e6f7355eac47ab715de6a04"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_handbook.pdf",
+      "sha256": "2e4c4e220206f0f128ad70ee5af62c6a4ae285b1f3df71484d21b1d1e8248fcc"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_User-Manual_NewStudent_Course-Registration_update-202620271.pdf",
+      "sha256": "6440e244e66e470a23b6a6237307575e345d690adc9e7b79c12be6892ab4d73c"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+      "sha256": "1f37688b7836ba7f324ef6078395c854cff4dcad20e7ada38118828955b7644c"
+    }
+  ],
+  "outputs": [
+    "/content/week3_project/data/pipeline_v1/documents/prepared_text.jsonl"
+  ],
+  "source_output_mapping": [
+    {
+      "source_id": "S01",
+      "source": "/content/week3_project/data/raw/utm_academic_calendar_2026_2027.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 8
+    },
+    {
+      "source_id": "S02",
+      "source": "/content/week3_project/data/raw/utm_academic_regulations.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 176
+    },
+    {
+      "source_id": "S03",
+      "source": "/content/week3_project/data/raw/utm_handbook.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 69
+    },
+    {
+      "source_id": "S04",
+      "source": "/content/week3_project/data/raw/utm_User-Manual_NewStudent_Course-Registration_update-202620271.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 21
+    },
+    {
+      "source_id": "S05",
+      "source": "/content/week3_project/data/raw/utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text.jsonl",
+      "records": 10
+    }
+  ],
+  "inspection": {
+    "S01": {
+      "file": "utm_academic_calendar_2026_2027.pdf",
+      "pages": 2,
+      "characters": 8335,
+      "low_text_pages": [],
+      "gid_glyph_tokens": 0
+    },
+    "S02": {
+      "file": "utm_academic_regulations.pdf",
+      "pages": 81,
+      "characters": 105131,
+      "low_text_pages": [
+        1,
+        2,
+        3,
+        11,
+        13,
+        15,
+        81
+      ],
+      "gid_glyph_tokens": 75
+    },
+    "S03": {
+      "file": "utm_handbook.pdf",
+      "pages": 28,
+      "characters": 39859,
+      "low_text_pages": [
+        1,
+        28
+      ],
+      "gid_glyph_tokens": 0
+    },
+    "S04": {
+      "file": "utm_User-Manual_NewStudent_Course-Registration_update-202620271.pdf",
+      "pages": 24,
+      "characters": 3752,
+      "low_text_pages": [
+        1,
+        2,
+        5
+      ],
+      "gid_glyph_tokens": 0
+    },
+    "S05": {
+      "file": "utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+      "pages": 10,
+      "characters": 2048,
+      "low_text_pages": [],
+      "gid_glyph_tokens": 0
+    }
+  },
+  "validation": {
+    "output_count": 1,
+    "output_sha256": [
+      "cbcd813500b9e4f445a69ec1bfe1a54e83ca2dca07b2263a49132bad9dd4edcd"
+    ],
+    "output_bytes": [
+      321628
+    ]
+  },
+  "source_version": "See docs/week3_data_inventory.md (S01-S05)",
+  "access_rights": "Public official UTM documents; coursework use only; raw files not redistributed"
+}
