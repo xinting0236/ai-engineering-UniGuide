@@ -11,7 +11,7 @@
 | Requirement ID | Needed information / feature | Candidate source | Why usable / constraint |
 |---|---|---|---|
 | FR1 / FR2 | Academic calendar dates, course registration procedures, academic regulations | S01 calendar, S02 regulations, S03 handbook, S04 and S05 registration manuals | Official UTM publications covering all four scope areas. Constraint: S03 is dated 2010, and the S04 and S05 manuals contain image-only content. |
-| RAI2 | Source publication date, edition, version and retrieval date | PDF metadata (creation date), edition statements inside the documents, my download date | DHelps identify outdated or unverified information and prevents old documents from being treated as current. |
+| RAI2 | Source publication date, edition, version and retrieval date | PDF metadata (creation date), edition statements inside the documents, my download date | Helps identify outdated or unverified information and prevents old documents from being treated as current. |
 | NFR4 | Source file identity, version and update history | Same file names with a version or date recorded in this inventory and in the metadata manifest |Supports repeatable document ingestion and allows individual documents to be updated without rebuilding the entire dataset. |
 
 ---
