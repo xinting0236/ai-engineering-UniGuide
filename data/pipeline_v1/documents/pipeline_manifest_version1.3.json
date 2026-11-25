@@ -1,0 +1,429 @@
+{
+  "pipeline_version": "week3-v1.3",
+  "generated_at_utc": "2026-11-25T12:11:37.191854+00:00",
+  "data_type": "documents",
+  "configuration": {
+    "method": "page-aware-source-specific-splitting",
+    "min_page_chars": 20,
+    "source_version": "See docs/week3_data_inventory_version1.3.md (S01, S02, S05, S06, S09, S07, S08)",
+    "access_rights": "Public official UTM documents; coursework use only; raw files not redistributed",
+    "sources": [
+      {
+        "source_id": "S01",
+        "filename": "utm_academic_calendar_2026_2027_1.pdf",
+        "source_type": "dates",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026-11-20",
+        "doc_date_basis": "file name 'utm_academic_calendar_2026_2027_1' (session 2026/2027); no publication date printed",
+        "retrieved_date": "2026-11-20",
+        "source_url": "https://amd.utm.my/wp-content/uploads/sites/460/2026/05/Final_Kalendar-Akademik-Sarjana-Muda.Sarjana.Kedoktoran-20262027-14.5.2026-pembetulan.pdf",
+        "edition": "Academic Calendar 2026/2027, Bachelor/Master/Doctoral (English, 1 page)",
+        "currency": "current_2026",
+        "valid_until": "2027-10-03",
+        "page_offset": 0,
+        "drop": [
+          "^www\\.utm\\.my$",
+          "^DATE PROGRAMME PUBLIC HOLIDAY",
+          "^ACADEMIC CALENDAR FOR",
+          "^BACHELOR, MASTER AND DOCTORAL",
+          "^UNIVERSITI TEKNOLOGI MALAYSIA$",
+          "^Innovating Sustainable Solutions$"
+        ],
+        "fixups": [
+          {
+            "name": "rejoin_split_word_august",
+            "pattern": "2 Au\\s*\\ngust 2027",
+            "repl": "2 August 2027"
+          }
+        ],
+        "splitter": "calendar",
+        "size": 1200,
+        "chunk_notes": {},
+        "note": "Two-column table flattened by text extraction: read dates by neighbouring line. Undated PDF print.",
+        "skipped_pages": []
+      },
+      {
+        "source_id": "S02",
+        "filename": "utm_academic_regulations.pdf",
+        "source_type": "rules",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026",
+        "doc_date_basis": "printed (copyright page 'First Edition 2026')",
+        "retrieved_date": "2026-11-10",
+        "source_url": "https://ugs.utm.my/wp-content/uploads/sites/8/2026/05/FT-UG-ACADEMIC-REGULATIONS-16th-edition.pdf",
+        "edition": "Academic Regulations, Full-Time UG (title page: 16th Edition; copyright page: First Edition 2026)",
+        "currency": "current_2026",
+        "valid_until": null,
+        "page_offset": 17,
+        "drop": [],
+        "fixups": [],
+        "splitter": "paragraph",
+        "size": 800,
+        "chunk_notes": {},
+        "note": "PDF page = printed page + 17. Edition label conflicts between title page and copyright page.",
+        "skipped_pages": [
+          1,
+          2,
+          3,
+          11,
+          13,
+          15,
+          81
+        ]
+      },
+      {
+        "source_id": "S05",
+        "filename": "utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+        "source_type": "how_to",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026-10-06",
+        "doc_date_basis": "file name 'update202620271' (session 2026/2027); PDF creation date",
+        "retrieved_date": "2026-11-10",
+        "source_url": "https://amd.utm.my/wp-content/uploads/sites/460/2026/10/User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+        "edition": "Senior-student course registration manual (update 2026/2027)",
+        "currency": "current_2026_student_verified",
+        "valid_until": null,
+        "page_offset": 0,
+        "drop": [
+          "^www\\.utm\\.my$"
+        ],
+        "fixups": [],
+        "splitter": "paragraph",
+        "size": 1200,
+        "chunk_notes": {},
+        "note": "Slide deck. Currency verified by the student (evidence to be recorded). Screenshots (p3, p8) are not indexed; p3 shows a matric number.",
+        "skipped_pages": []
+      },
+      {
+        "source_id": "S06",
+        "filename": "utm_ug_work_schedule_2026_2027.pdf",
+        "source_type": "dates",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026-10-09",
+        "doc_date_basis": "printed ('Date : 9 October 2026')",
+        "retrieved_date": "2026-11-20",
+        "source_url": "https://amd.utm.my/wp-content/uploads/sites/460/2026/10/Student-202620271-UG-Work-Schedule-for-Course-Registration.Award-of-Degree.Examination-1.pdf",
+        "edition": "UG Work Schedule for Course Registration, Award of Degree, Examination (Semester I 2026/2027)",
+        "currency": "current_2026_time_bound",
+        "valid_until": "2027-03-21",
+        "page_offset": 0,
+        "drop": [
+          "^NO\\. ACTIVITY DURATION WEEK DATE REMARKS$"
+        ],
+        "fixups": [
+          {
+            "name": "drop_page_number_line",
+            "pattern": "(?s)\\A\\d\\s*\\n(?=NO\\. ACTIVITY)",
+            "repl": ""
+          },
+          {
+            "name": "split_row3_from_row2",
+            "pattern": "Deputy Dean\\.(3) Course",
+            "repl": "Deputy Dean.\\n\\1 Course"
+          }
+        ],
+        "splitter": "rows",
+        "size": 1200,
+        "chunk_notes": {
+          "Row 3": "Two date ranges listed; the PDF marks the revised range in blue (colour lost in text extraction).",
+          "Row 7": "Over 18 credits needs Academic Advisor and Deputy Dean approval; S02 Art. 13 says Dean approval.",
+          "Row 14": "Source typo: Thaipusam printed as '22 Janaury 2026' (calendar S01: 22 January 2027). 1 Jan 2027 labelled Federal Territory Day (KL only); S01 lists 1 Feb 2027 as Federal Territory Day and 1 Jan as New Year's Day (KL only).",
+          "Row 18": "Semester II registration window 11-22 January 2027."
+        },
+        "note": "Semester I 2026/2027 only. Time-bound: several deadlines have already passed after 24 Nov 2026. Source typos kept verbatim.",
+        "skipped_pages": []
+      },
+      {
+        "source_id": "S09",
+        "filename": "utm_ug_work_schedule_sem2_2026_2027.pdf",
+        "source_type": "dates",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026-09-10",
+        "doc_date_basis": "pdf_creation_date (printed 'Date : September 2026', no day)",
+        "retrieved_date": "2026-11-24",
+        "source_url": "https://amd.utm.my/wp-content/uploads/sites/460/2026/09/Student-202620272-UG-Work-Schedule-for-Course-Registration.Award-of-Degree.Examination.pdf",
+        "edition": "UG Work Schedule for Course Registration, Award of Degree, Examination (Semester II 2026/2027)",
+        "currency": "current_2026_time_bound",
+        "valid_until": "2027-10-03",
+        "page_offset": 0,
+        "drop": [
+          "^NO\\. ACTIVITY DURATION WEEK DATE REMARKS$"
+        ],
+        "fixups": [
+          {
+            "name": "drop_page_number_line",
+            "pattern": "(?s)\\A\\d\\s*\\n(?=NO\\. ACTIVITY)",
+            "repl": ""
+          }
+        ],
+        "splitter": "rows",
+        "size": 1200,
+        "chunk_notes": {
+          "Row 1": "Text says registration 'in January 2026' for a Semester II 2026/2027 schedule; looks copied from an older edition (not corrected).",
+          "Row 7": "Over 18 credits needs Academic Advisor and Deputy Dean approval; S02 Art. 13 says Dean approval.",
+          "Row 17": "Titled 'Class Schedule for Semester I, 2026/2027'; in a Semester II schedule this probably means Semester I 2027/2028 (not corrected).",
+          "Row 9": "Source typo 'Submisssion' kept verbatim."
+        },
+        "note": "Semester II 2026/2027 only; companion to S06 (Semester I). Time-bound until the Semester II break ends. Source typos kept verbatim.",
+        "skipped_pages": []
+      },
+      {
+        "source_id": "S07",
+        "filename": "utm_matric_card_faq_2026.pdf",
+        "source_type": "faq",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026-10-01",
+        "doc_date_basis": "printed ('Updated 1 Oktober 2026')",
+        "retrieved_date": "2026-11-20",
+        "source_url": "https://studentaffairs.utm.my/wp-content/uploads/2026/10/FAQs-Kad-Matrik-2026.pdf",
+        "edition": "FAQ Matric Card (updated 1 Oct 2026)",
+        "currency": "current_2026",
+        "valid_until": null,
+        "page_offset": 0,
+        "drop": [
+          "^Updated \\d+ \\w+ \\d{4}$"
+        ],
+        "fixups": [],
+        "splitter": "qa",
+        "size": 1200,
+        "chunk_notes": {},
+        "note": "Q&A pairs; mixes English with one Malay month name. Contains public office e-mail addresses only.",
+        "skipped_pages": []
+      },
+      {
+        "source_id": "S08",
+        "filename": "utm_utmid_faq_2026.pdf",
+        "source_type": "faq",
+        "language_default": "en",
+        "language_by_page": {},
+        "doc_date": "2026-09-29",
+        "doc_date_basis": "printed ('Updated on 29th September 2026')",
+        "retrieved_date": "2026-11-20",
+        "source_url": "https://studentaffairs.utm.my/wp-content/uploads/2026/09/UTMID-2026.pdf",
+        "edition": "FAQ UTMID (updated 29 Sep 2026)",
+        "currency": "current_2026",
+        "valid_until": null,
+        "page_offset": 0,
+        "drop": [
+          "^UPDATED ON 29TH\\s+SEPTEMBER 2026$"
+        ],
+        "fixups": [
+          {
+            "name": "rejoin_split_Q7_label",
+            "pattern": "(?m)^(Q\\d+)[ \\t]*(?:\\r?\\n[ \\t]*)*:[ \\t]*(?:\\r?\\n[ \\t]*)*",
+            "repl": "\\1 : "
+          }
+        ],
+        "splitter": "qa",
+        "size": 1200,
+        "chunk_notes": {},
+        "note": "Q6 and Q7 answers are infographic images; supplemented by OCR + manual check (see OCR_SUPPLEMENTS).",
+        "skipped_pages": []
+      }
+    ],
+    "ocr_supplements": [
+      {
+        "supplement_id": "OCR-S05-p009-legend",
+        "source_id": "S05",
+        "pdf_page": 9,
+        "attach": "first_on_page",
+        "bbox": [
+          0.28,
+          0.79,
+          0.72,
+          0.97
+        ],
+        "psm": 6,
+        "method": "ocr+manual_check",
+        "reason": "Slip legend (learning-method and exam-type codes) exists only as an image.",
+        "verified_text": "Course registration slip legend. Learning Method: OL = Online Learning; FC = Face to face; BL = Blended Learning (starts with online learning followed by face to face); BLS = Blended Learning Substitution. Examination Type: AA = Alternative Assessment; NFE = No Final Exam; ASYNC O = Asynchronous online exam; SYNC O = Synchronous online exam, no invigilation and no proctoring; SYNC OP = Synchronous online exam using online proctoring; SYNC OV = Synchronous online exam with online invigilation; SYNC P = Synchronous online exam with physical invigilation; PTF = Face-to-face final exam (printed as 'PTF' in the source; likely 'FTF', not verified)."
+      },
+      {
+        "supplement_id": "OCR-S08-p001-Q6",
+        "source_id": "S08",
+        "pdf_page": 1,
+        "attach": "section:Q6",
+        "bbox": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "psm": 11,
+        "method": "manual_transcription (ocr partial)",
+        "reason": "Q6 answer (UTMSmart install steps) is an infographic; OCR recovers only fragments.",
+        "verified_text": "Answer (from infographic) - How to install UTMSmart. Step 1: Open Google Play Store or App Store. Step 2: Download and install UTMSmart. Step 3: Open UTMSmart and click the menu 'Login'. Step 4: Login using UTMID."
+      },
+      {
+        "supplement_id": "OCR-S08-p002-Q7",
+        "source_id": "S08",
+        "pdf_page": 2,
+        "attach": "section:Q7",
+        "bbox": [
+          0.0,
+          0.0,
+          1.0,
+          1.0
+        ],
+        "psm": 11,
+        "method": "manual_transcription (ocr partial)",
+        "reason": "Q7 answer (Freshies' Guide steps) is an infographic.",
+        "verified_text": "Answer (from infographic) - How to access Freshies' Guide using UTMSmart. Step 1: Download and install UTMSmart. Step 2: Click the 'Getting Around' menu. Step 3: Click the 'Freshies' Guide' menu. Step 4: Click any Freshies' Guide menu."
+      }
+    ]
+  },
+  "processing_method": "page-aware-source-specific-splitting (per-source splitter; see configuration)",
+  "sources": [
+    {
+      "path": "/content/week3_project/data/raw/utm_academic_calendar_2026_2027_1.pdf",
+      "sha256": "7cfd417f62a1041c608794fb0f72235da4412c9c43239d603cc90e2f8d30a492"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_academic_regulations.pdf",
+      "sha256": "d2743dfad87d3be3393732e0416088ad62cf4afb9e6f7355eac47ab715de6a04"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+      "sha256": "1f37688b7836ba7f324ef6078395c854cff4dcad20e7ada38118828955b7644c"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_ug_work_schedule_2026_2027.pdf",
+      "sha256": "2ef20c741269d05392eca27accc49b080cf7995a4d7e16c01a89cea377f5d7fb"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_ug_work_schedule_sem2_2026_2027.pdf",
+      "sha256": "28b3e102cb7f9260d0a9bd728e8814110d156965c6fdee2bc8f0529fe677b858"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_matric_card_faq_2026.pdf",
+      "sha256": "0309ec341777e79350d8246089c00e795f196805c23e9338158ee4430fd52cee"
+    },
+    {
+      "path": "/content/week3_project/data/raw/utm_utmid_faq_2026.pdf",
+      "sha256": "937012aea75d7f5445c420fbfcff05365087e234154d044164258145cf3fe97e"
+    }
+  ],
+  "outputs": [
+    "/content/week3_project/data/pipeline_v1/documents/prepared_text_version1.3.jsonl"
+  ],
+  "source_output_mapping": [
+    {
+      "source_id": "S01",
+      "source": "/content/week3_project/data/raw/utm_academic_calendar_2026_2027_1.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text_version1.3.jsonl",
+      "records": 5
+    },
+    {
+      "source_id": "S02",
+      "source": "/content/week3_project/data/raw/utm_academic_regulations.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text_version1.3.jsonl",
+      "records": 183
+    },
+    {
+      "source_id": "S05",
+      "source": "/content/week3_project/data/raw/utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text_version1.3.jsonl",
+      "records": 10
+    },
+    {
+      "source_id": "S06",
+      "source": "/content/week3_project/data/raw/utm_ug_work_schedule_2026_2027.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text_version1.3.jsonl",
+      "records": 22
+    },
+    {
+      "source_id": "S09",
+      "source": "/content/week3_project/data/raw/utm_ug_work_schedule_sem2_2026_2027.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text_version1.3.jsonl",
+      "records": 22
+    },
+    {
+      "source_id": "S07",
+      "source": "/content/week3_project/data/raw/utm_matric_card_faq_2026.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text_version1.3.jsonl",
+      "records": 11
+    },
+    {
+      "source_id": "S08",
+      "source": "/content/week3_project/data/raw/utm_utmid_faq_2026.pdf",
+      "output": "/content/week3_project/data/pipeline_v1/documents/prepared_text_version1.3.jsonl",
+      "records": 7
+    }
+  ],
+  "inspection": {
+    "S01": {
+      "file": "utm_academic_calendar_2026_2027_1.pdf",
+      "pages": 1,
+      "characters": 3568,
+      "low_text_pages": [],
+      "gid_glyph_tokens": 0
+    },
+    "S02": {
+      "file": "utm_academic_regulations.pdf",
+      "pages": 81,
+      "characters": 105006,
+      "low_text_pages": [
+        1,
+        2,
+        3,
+        11,
+        13,
+        15,
+        81
+      ],
+      "gid_glyph_tokens": 75
+    },
+    "S05": {
+      "file": "utm_User-Manual_Course-Registration-Senior-Student_update202620271.pdf",
+      "pages": 10,
+      "characters": 2048,
+      "low_text_pages": [],
+      "gid_glyph_tokens": 0
+    },
+    "S06": {
+      "file": "utm_ug_work_schedule_2026_2027.pdf",
+      "pages": 3,
+      "characters": 5027,
+      "low_text_pages": [],
+      "gid_glyph_tokens": 0
+    },
+    "S09": {
+      "file": "utm_ug_work_schedule_sem2_2026_2027.pdf",
+      "pages": 3,
+      "characters": 4916,
+      "low_text_pages": [],
+      "gid_glyph_tokens": 0
+    },
+    "S07": {
+      "file": "utm_matric_card_faq_2026.pdf",
+      "pages": 2,
+      "characters": 3619,
+      "low_text_pages": [],
+      "gid_glyph_tokens": 0
+    },
+    "S08": {
+      "file": "utm_utmid_faq_2026.pdf",
+      "pages": 2,
+      "characters": 1824,
+      "low_text_pages": [],
+      "gid_glyph_tokens": 0
+    }
+  },
+  "validation": {
+    "output_count": 1,
+    "output_sha256": [
+      "49023b273ea46bfbe2fab011914077265da3f44bc3338b48f79bf4eaa6fdbbc6"
+    ],
+    "output_bytes": [
+      393807
+    ]
+  },
+  "source_version": "See docs/week3_data_inventory_version1.3.md (S01, S02, S05, S06, S09, S07, S08)",
+  "access_rights": "Public official UTM documents; coursework use only; raw files not redistributed"
+}
