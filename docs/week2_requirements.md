@@ -1,3 +1,5 @@
+**Version 1.3 changes**: *citation text cleaned and verification status added*, *application scope table*,*Project Objective*, *FR1 wording, FR6 boundary*, *RAI2 extended to time-bound and conflicting sources* 
+
 # Section 0 — Project Framing & Application Scope Checkpoint
 
 ## 0.1 Problem Evidence
@@ -30,7 +32,7 @@ UniGuide AI addresses this practical limitation by integrating semantic document
 
 ## 0.4 Project Objectives
 
-- **O1:** To collect and prepare official UTM documents and webpages covering academic calendars, course registration, academic regulations, and student services for the knowledge base.
+- **O1:** To collect and prepare official 2026 UTM documents on the academic calendar, academic regulations, course registration, and matric card / UTMID services for the knowledge base, keeping source, date and currency metadata for every passage.
 - **O2:** To develop a web-based university FAQ assistant using semantic retrieval and a large language model to generate document-grounded answers with source citations and appropriate fallback behaviour.
 - **O3:** To evaluate the system using answer correctness, retrieval relevance, citation accuracy, unsupported-answer handling, and response latency.
 

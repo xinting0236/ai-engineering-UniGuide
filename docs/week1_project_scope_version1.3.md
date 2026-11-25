@@ -1,3 +1,5 @@
+ **Version 1.3 changes**: *Problem Statement*, *Evidence 3*, *Target Users*, *Data Sources*, *Different from EduAdvisor*, *Risk 1 and Risk 2 mitigations*. 
+
 ## Project Name
 
 **UniGuide AI — AI-Powered University FAQ Assistant**
@@ -8,9 +10,10 @@ Higher Education / Student Services / Natural Language Processing / Retrieval-Au
 
 ## Problem Statement
 
-University students often need to find information about academic calendars, course registration, academic regulations, and student services. This information is published across different university webpages and documents, which can make it time-consuming to locate the correct information.
+University students often need to find information about academic dates, course registration, academic regulations, and matric card or UTMID services. This information is published in separate official documents (rules, calendars, work schedules, step-by-step manuals and FAQs), and some of it is time-bound, so it can be time-consuming to find the correct and current answer.
 
-UniGuide AI will use semantic retrieval and a large language model to answer students' questions using official UTM documents. It will provide source citations so students can verify the information and will indicate when the available documents do not contain a sufficient answer.
+UniGuide AI will use semantic retrieval and a large language model to answer students' questions using official 2026 UTM documents. It will provide source citations and source dates so students can verify the information, and will indicate when the available documents do not contain a sufficient answer.
+
 
 ## Evidence of the Problem
 
@@ -56,7 +59,7 @@ UniGuide AI addresses this practical gap by integrating semantic document retrie
 
 ## Initial Project Objectives (2–3)
 
-**O1:** To collect and prepare official UTM documents and webpages covering academic calendars, course registration, academic regulations, and student services for the knowledge base.
+**O1:** To collect and prepare official 2026 UTM documents on the academic calendar, academic regulations, course registration, and matric card / UTMID services for the knowledge base, keeping source, date and currency metadata for every passage.
 
 **O2:** To develop a web-based university FAQ assistant using semantic retrieval and a large language model to generate document-grounded answers with source citations and appropriate fallback behaviour.
 
@@ -70,29 +73,16 @@ The initial version will focus on publicly accessible information and will not p
 
 ## Data Sources (at least 2)
 
-**Source 1: UTM Academic Management Division — Course Registration Guidelines**
+| ID | Source | Purpose | URL |
+|---|---|---|---|
+| S01 | Academic Calendar 2026/2027 (English) | Semester, break, examination and public-holiday dates | https://amd.utm.my/wp-content/uploads/sites/460/2026/05/Final_Kalendar-Akademik-Sarjana-Muda.Sarjana.Kedoktoran-20262027-14.5.2026-pembetulan.pdf |
+| S02 | Academic Regulations, Full-Time Undergraduate Studies Programme | Authoritative rules: credit load, repeating courses, fees, examinations | https://ugs.utm.my/wp-content/uploads/sites/8/2026/05/FT-UG-ACADEMIC-REGULATIONS-16th-edition.pdf |
+| S05 | Step-by-step Course Registration — Senior Student (update 2026/2027) | Registration steps and the slip legend | https://amd.utm.my/wp-content/uploads/sites/460/2026/10/User-Manual_Course-Registration-Senior-Student_update202620271.pdf |
+| S06 | UG Work Schedule for Course Registration, Award of Degree, Examination — Semester I 2026/2027 | Dates, penalties and approval routes for Semester I | https://amd.utm.my/wp-content/uploads/sites/460/2026/10/Student-202620271-UG-Work-Schedule-for-Course-Registration.Award-of-Degree.Examination-1.pdf |
+| S09 | UG Work Schedule for Course Registration, Award of Degree, Examination — Semester II 2026/2027 | Dates, penalties and approval routes for Semester II | https://amd.utm.my/wp-content/uploads/sites/460/2026/09/Student-202620272-UG-Work-Schedule-for-Course-Registration.Award-of-Degree.Examination.pdf |
+| S07 | FAQ Matric Card (updated 1 Oct 2026) | Matric card photo, replacement and contact answers | https://studentaffairs.utm.my/wp-content/uploads/2026/10/FAQs-Kad-Matrik-2026.pdf |
+| S08 | FAQ UTMID (updated 29 Sep 2026) | UTMID, official e-mail, password reset and UTMSmart answers | https://studentaffairs.utm.my/wp-content/uploads/2026/09/UTMID-2026.pdf |
 
-URL: https://amd.utm.my/course-registration/
-
-**Purpose:** To provide information about course registration procedures, registration requirements, and relevant student guidance.
-
-**Source 2: UTM Faculty of Computing — Student Development Hub**
-
-URL: https://comp.utm.my/student/home/
-
-**Purpose:** To identify official student resources, including academic calendars, academic regulations, course registration information, and undergraduate handbooks.
-
-**Source 3: UTM Faculty of Computing — Undergraduate Resources**
-
-URL: https://comp.utm.my/undergraduate/
-
-**Purpose:** To obtain relevant undergraduate programme handbooks, academic regulations, registration information, and academic calendars where publicly available.
-
-**Source 4: UTM Faculty of Computing — Programmes and Student Hub**
-
-URL: https://comp.utm.my/programmes-and-student-hub/
-
-**Purpose:** To identify additional programme and student information that may be useful for expanding the knowledge base.
 
 ## Similar to EduAdvisor
 
@@ -100,7 +90,7 @@ Both UniGuide AI and EduAdvisor are document-grounded question-answering systems
 
 ## Different from EduAdvisor
 
-UniGuide AI focuses on general university FAQs and student services, such as academic calendar dates, course registration procedures, academic regulations, and student resources. EduAdvisor focuses more specifically on academic advising, including course prerequisites, course planning, and graduation requirements.
+UniGuide AI focuses on general university FAQs: academic calendar dates, course registration rules and procedures, academic regulations, and matric card / UTMID services. EduAdvisor focuses more specifically on academic advising, including course prerequisites, course planning, and graduation requirements.
 
 UniGuide AI will initially prioritise finding and explaining information in official UTM resources rather than making personalised academic recommendations.
 
@@ -108,11 +98,11 @@ UniGuide AI will initially prioritise finding and explaining information in offi
 
 **Risk 1 — Hallucination and incorrect information:** The assistant may generate incorrect registration requirements, dates, or policies. This could mislead students.
 
-**Mitigation:** Retrieve relevant official passages, provide source citations, evaluate answers against verified reference answers, and decline to answer when the documents do not provide sufficient evidence.
+**Mitigation:** Retrieve relevant official passages, provide source citations, evaluate answers against verified reference answers, and decline to answer when the documents do not provide sufficient evidence. When two sources disagree (for example Dean vs Deputy Dean approval for more than 18 credits), apply the precedence rule: regulations (S02) for rules, calendar (S01) and work schedule (S06) for dates, manuals (S05) and FAQs (S07, S08) for steps and services; show both sources when the conflict is unresolved.
 
 **Risk 2 — Outdated information:** Academic calendars, registration dates, and university policies may change. Answers based on old documents could mislead students.
 
-**Mitigation:** Record document versions and update dates, prioritise current official sources, and display the source date when available. Flag information that has not been verified as current.
+**Mitigation:** Record document versions and update dates, prioritise current official sources, and display the source date when available. Flag information that has not been verified as current. Tag time-bound sources (S06 covers Semester I 2026/2027 only) with `valid_until`, and tell the student when a deadline in the retrieved passage is already past.
 
 **Risk 3 — Unequal answer quality:** Some student questions may be answered less accurately because of ambiguous wording, unfamiliar terminology, or insufficient coverage in the knowledge base.
 
