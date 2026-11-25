@@ -83,6 +83,7 @@ The initial version will focus on publicly accessible information and will not p
 | S07 | FAQ Matric Card (updated 1 Oct 2026) | Matric card photo, replacement and contact answers | https://studentaffairs.utm.my/wp-content/uploads/2026/10/FAQs-Kad-Matrik-2026.pdf |
 | S08 | FAQ UTMID (updated 29 Sep 2026) | UTMID, official e-mail, password reset and UTMSmart answers | https://studentaffairs.utm.my/wp-content/uploads/2026/09/UTMID-2026.pdf |
 
+*Retired from version 1.0:* S03 (2010 advising handbook) and S04 (new-student manual).
 
 ## Similar to EduAdvisor
 
