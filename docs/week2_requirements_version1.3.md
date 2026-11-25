@@ -1,4 +1,4 @@
-**Version 1.3 changes**: *citation text cleaned and verification status added*, *application scope table*,*Project Objective*, *FR1 wording, FR6 boundary*, *RAI2 extended to time-bound and conflicting sources* 
+**Version 1.3 changes**: *citation text cleaned and verification status added*, *Application scope table*,*Project Objective*, *FR1 wording, FR6 boundary*, *RAI2 extended to time-bound and conflicting sources* 
 
 # Section 0 — Project Framing & Application Scope Checkpoint
 
@@ -40,9 +40,9 @@ UniGuide AI addresses this practical limitation by integrating semantic document
 
 | Framing Element | Description |
 |---|---|
-| Intended Users | UTM undergraduate students, particularly new students and students seeking academic and student service information. |
-| Supported Tasks | Answer questions about academic calendars, course registration procedures, academic regulations, and student services. Provide relevant source citations and indicate when sufficient information is unavailable. |
-| Information / Knowledge Domain | Official, publicly accessible UTM academic and student service documents and webpages. |
+| Intended Users | UTM full-time bachelor's degree students, new and continuing. |
+| Supported Tasks | Answer questions about the academic calendar, academic regulations, course registration rules and procedures, and matric card / UTMID services. Provide source citations with the source date, and indicate when sufficient information is unavailable. |
+| Information / Knowledge Domain | Official 2026 UTM documents on academic dates, academic regulations, course registration steps, and matric card and UTMID services. |
 | Operating Context | A web-based application that students can access through a browser to ask questions in natural language and receive answers based on the prepared UTM knowledge base. |
 | Important Constraints | Limited to publicly accessible official UTM information. Document accuracy and update frequency depend on available university sources. The project does not access private student records. |
 | Explicit Out-of-Scope Tasks | Personalised academic advising, individual course selection, graduation eligibility decisions, prerequisite waiver decisions, private student record enquiries, and administrative transactions. |
@@ -61,12 +61,12 @@ Version: 1.0
 
 | ID | Requirement — The System SHALL | Scope Boundary — SHALL NOT |
 |---|---|---|
-| FR1 | Answer student questions about academic calendars, course registration procedures, academic regulations, and student services using the prepared UTM knowledge base. |Invent dates, procedures, or regulations that are not stated in the official UTM documents. |
+| FR1 | Answer student questions about the academic calendar, course registration rules and procedures, academic regulations, and matric card / UTMID services using the prepared UTM knowledge base. |Invent dates, procedures, or regulations that are not stated in the official UTM documents. |
 | FR2 | Retrieve relevant information from official UTM documents and webpages based on the meaning and context of students' natural-language questions. | Retrieve or rely on unrelated or unverified information as authoritative UTM information. |
 | FR3 | Generate answers based on the retrieved document passages and provide source citations so students can verify the information. | Present unsupported information as if it came from an official UTM document. |
 | FR4 | Identify questions for which the knowledge base does not contain sufficient supporting information and provide an appropriate fallback response. | Guess or generate answers when sufficient supporting evidence is unavailable. |
 | FR5 | Present answers in plain, clear language appropriate for UTM undergraduate students, avoiding unexplained technical or administrative jargon. |  |
-| FR6 | Decline questions outside the defined application scope (personalized academic advising, private student records, administrative transactions) and redirect the student to the appropriate UTM office or official webpage. | Make personalized academic decisions (e.g. course selection, graduation eligibility, prerequisite waivers) or perform university administrative transactions. |
+| FR6 | Decline questions outside the defined application scope (personalized academic advising, private student records, administrative transactions) and redirect the student to the appropriate UTM office or official webpage. | Make personalized academic decisions (e.g. course selection, graduation eligibility, prerequisite waivers), perform university administrative transactions, or answer from general knowledge about services the knowledge base does not cover.. |
 
 ---
 
@@ -86,7 +86,7 @@ Version: 1.0
 | ID | Responsible AI Risk | Requirement | Measurement Method | Metric | Threshold |
 |---|---|---|---|---|---|
 | RAI1 | Hallucination and Incorrect Information | The system shall provide answers supported by retrieved official UTM documents and use a fallback response when sufficient evidence is unavailable. | Test with answerable and unanswerable questions and manually verify answers against source documents. | Supported-answer rate for answerable questions; correct fallback rate for unanswerable questions. | ≥ 95% supported answers; ≥ 95% correct fallback |
-| RAI2 | Outdated Information | The system shall display available source dates or document versions and explicitly mark sources without date/version information as "currency not verified". | Test documents with different publication or update dates, including some with no date metadata, and inspect the displayed source information. | (a) Source-date/version display rate when metadata is available; (b) "currency not verified" flag rate for sources lacking metadata | (a) 100%; (b) 100% |
+| RAI2 | Outdated Information | The system shall display available source dates or document versions, explicitly mark sources without date/version information as "currency not verified", and flag a deadline from a time-bound source (`valid_until`) as past when the current date is later than the date in the retrieved passage. | Test documents with different publication or update dates, including some with no date metadata, and inspect the displayed source information  and deadline flags. | (a) Source-date/version display rate when metadata is available; (b) "currency not verified" flag rate for sources lacking metadata; (c) past-deadline flag rate | (a) 100%; (b) 100%; (c) ≥ 95% |
 | RAI3 | Unequal Answer Quality (Robustness to Phrasing) | The system shall provide consistent answer quality for questions with different wording and levels of clarity. | Test equivalent questions using different phrasings and compare the correctness of their answers. | Answer correctness rate across paraphrased question sets; gap versus standard-phrased questions | ≥ 80% and gap ≤ 10 percentage points |
 | RAI4 | Safety / Scope | The system shall refuse out-of-scope queries and redirect the student to an appropriate UTM office or official webpage. | Run a defined scope test set containing at least 20 out-of-scope queries (e.g. "What is my CGPA?", "Which courses should I take next semester?"). | Refusal-and-redirect success rate | ≥ 95% |
 

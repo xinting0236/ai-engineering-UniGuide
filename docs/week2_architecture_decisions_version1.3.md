@@ -1,3 +1,5 @@
+**Version 1.3 changes:** *added Decision 7 (source-type metadata and precedence rule) and two traceability rows (O1 / FR1 conflicts; O2 / RAI2 time-bound sources).* 
+
 # Architecture Decision Record (ADR)
 
 ### Decision 1: Include an Official Knowledge Source and Semantic Retrieval
@@ -60,6 +62,16 @@
 | Selected Option | Use a prepared evaluation dataset and defined evaluation metrics. |
 | Trade-off Accepted | Requires time to prepare test questions and verified reference answers, but provides measurable evidence of system performance. |
 
+### Decision 7: Tag Every Source with a Type and Apply a Precedence Rule
+
+| Item | Description |
+|---|---|
+| Decision | Store `source_type` (`rules`, `dates`, `how_to`, `faq`), `doc_date`, `valid_until` and `currency_status` on every passage, and apply a precedence rule when retrieved passages disagree: regulations (S02) decide rules; calendar (S01) and work schedules (S06, S09) decide dates; manual (S05) and FAQs (S07, S08) decide steps and service details. If the conflict is not settled by type, show both sources. |
+| Requirement / Constraint | FR1, FR3, RAI1, RAI2 — The 2026 documents disagree in places: S02 Art. 13 names the Dean as approver above 18 credits while S06 and S09 name the Academic Advisor and Deputy Dean; S06 row 14 dates Federal Territory Day on 1 Jan 2027 while S01 gives 1 Feb 2027; S06 covers Semester I only and S09 Semester II only. |
+| Alternatives Considered | Retrieve by similarity only and let the LLM decide; keep only the newest document per topic; tag source type and apply an explicit precedence rule with a "show both" fallback. |
+| Selected Option | Source-type tags and precedence rule, with both sources shown when unresolved. |
+| Trade-off Accepted | Needs a small piece of rule logic and manual tagging of seven sources, and a type rule can be wrong for a particular passage, but conflicts become visible and testable (evaluation criterion 7) instead of being decided silently by the model. |
+
 ---
 
 # Initial Requirements Traceability Matrix
@@ -73,4 +85,5 @@
 | O2 | FR6 / RAI4 | Out-of-Scope Refusal | Scope Control and Fallback Control | Refusal-and-redirect results on ≥ 20 out-of-scope queries; target ≥ 95%. |
 | O3 | NFR1 | Answer Correctness | Semantic Retrieval, Evidence Checking, and Language Model Service | Answer correctness test results; target ≥ 85%. |
 | O3 | NFR2 | Response Latency | Application Interface and AI Processing Components | p90 response latency test results; target ≤ 5 seconds. |
-
+| O2 | FR1 / FR3 / RAI1 | Time-Sensitive and Conflicting-Source Handling | Citation and Source Control | Conflict test set (≥ 10 questions); target ≥ 90%. |
+| O1 | RAI2 | Time-Sensitive and Conflicting-Source Handling | Document Management and Knowledge Base Update | Prepared corpus carries `doc_date`, `source_type` and `currency_status` on 100% of records, and `valid_until` on the time-bound sources. |

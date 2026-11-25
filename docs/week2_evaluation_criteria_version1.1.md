@@ -1,3 +1,5 @@
+**Version 1.1 changes:** *added criterion 7 (time-sensitive and conflicting-source handling)*
+
 ### Evaluation Criteria Table
 
 | No. | Objective / Requirement ID | Evaluation Criterion | Capability Bucket | Measurement Method | Metric | Threshold | User / Business Outcome |
@@ -8,3 +10,4 @@
 | 4 | O3 / NFR3 / FR2 | Document Retrieval Relevance | Domain-specific capability | Prepare questions with manually identified relevant supporting passages and check whether the retrieval system returns those passages within the top five results. | Recall@5 (%) | ≥ 80% | Students receive answers based on relevant official university information rather than unrelated documents. |
 | 5 | O3 / NFR2 | Response Latency | Cost and latency | Measure end-to-end response time across a defined workload of student questions under normal operating conditions. | 90th percentile response latency (p90) | ≤ 5 seconds | Students receive responses quickly and can access university information efficiently. |
 | 6 | O2 / FR6 / RAI4 | Out-of-Scope Refusal | Instruction-following capability | Test the system with a defined scope test set of at least 20 out-of-scope queries (e.g. private records, personalized advising) and check that it declines and redirects. | Refusal-and-redirect success rate (%) | ≥ 95% | Reduces inappropriate or misleading advice outside the intended university FAQ scope. |
+| 7 | O2 / FR1 / RAI2 | Time-Sensitive and Conflicting-Source Handling | Domain-specific capability | Run a test set of at least 10 questions where the retrieved passage holds a past deadline or where two sources disagree. Check that the answer shows the source date, marks an expired deadline, and applies the precedence rule or shows both sources. | Correct time-and-conflict handling rate (%) | ≥ 90% | Students are not told to act on a deadline that has passed, and are not given one source's answer when the sources disagree. |
