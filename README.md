@@ -48,3 +48,5 @@ UTM undergraduate students, especially new students who need to find information
 | Week | Focus | Deliverable | Status |
 |---|---|---|---|
 | W1 | System map + project scope | README.md + docs | ✅ |
+| W2 | Evaluation criteria + requirements + architecture decisions + architecture v1 | docs | ✅ |
+| W3 | Data inventory + pipeline decisions + pipeline diagram | docs + data + notebook | ✅ |
