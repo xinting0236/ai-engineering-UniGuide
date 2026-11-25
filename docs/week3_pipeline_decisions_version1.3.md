@@ -20,7 +20,7 @@
 
 ## 2. Selected sources
 
-Full details are in `docs/week3_data_inventory.md`. Raw files are in Full details: `docs/week3_data_inventory_version1.3.md`. Raw files are not committed.
+Full details: `docs/week3_data_inventory_version1.3.md`. Raw files are not committed.
 
 | ID | Source | Pages | Characters | Version / date |
 |---|---|---|---|---|
@@ -42,13 +42,13 @@ Total extracted text: 126,197 characters. Retired: S03 (2010 handbook), S04 (new
 | Source | A chunks | A crossing a page break | A starting lowercase | A cutting a row / Q&A / block in two | B chunks | B crossing a page break | B starting lowercase |
 |---|---|---|---|---|---|---|---|
 | S01 calendar | 7 | 0 | 3 | 4 of 5 blocks | 5 | 0 | 0 |
-| S02 regulations | 205 | 71 | 164 | n/a | 183 | 0 | 18 |
+| S02 regulations | 205 | 71 | 156 | n/a | 183 | 0 | 18 |
 | S05 senior manual | 4 | 4 | 1 | n/a | 10 | 0 | 0 |
 | S06 work schedule | 10 | 2 | 7 | 9 of 22 rows | 22 | 0 | 0 |
-| S09 work schedule (Sem II) | 10 | 2 | 4 | 9 of 22 rows | 22 | 0 | 0 |
+| S09 work schedule (Sem II) | 10 | 2 | 5 | 9 of 22 rows | 22 | 0 | 0 |
 | S07 matric FAQ | 8 | 1 | 6 | 7 of 11 Q&A | 11 | 0 | 0 |
 | S08 UTMID FAQ | 4 | 1 | 2 | 3 of 7 Q&A | 7 | 0 | 0 |
-| **Total** | **248** | **81** | **187** | | **260** | **0** | **18** |
+| **Total** | **248** | **81** | **180** | | **260** | **0** | **18** |
 
 (The "cutting" column counts how many B units a fixed 500-character window would split.)
 
@@ -91,7 +91,7 @@ Total extracted text: 126,197 characters. Retired: S03 (2010 handbook), S04 (new
 
 |  Check | Result |
 |---|---|
-| Part B output (`prepared_text_version1.3.jsonl`) | 260 records, 393,904 bytes |
+| Part B output (`prepared_text_version1.3.jsonl`) | 260 records, 393,807 bytes |
 | Records per source | S01 5, S02 183, S05 10, S06 22, S09 22, S07 11, S08 7 |
 | Share of prepared text by characters | S02 82.9%, S06 3.9%, S09 3.8%, S07 2.8%, S01 2.7%, S05 2.1%, S08 1.7% |
 | Extraction methods | pypdf 257; pypdf + OCR with manual check 1; pypdf + manual transcription 2 |

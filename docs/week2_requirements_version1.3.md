@@ -57,7 +57,7 @@ The evaluation will determine whether UniGuide AI can retrieve relevant informat
 
 # Requirements Specification - UniGuide
 
-Version: 1.0  
+Version: 1.3  
 
 | ID | Requirement — The System SHALL | Scope Boundary — SHALL NOT |
 |---|---|---|

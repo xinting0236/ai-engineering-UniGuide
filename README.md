@@ -2,6 +2,8 @@
 
 > Answers UTM full-time bachelor's students' questions about the academic calendar, academic regulations, course registration and matric card / UTMID services, using official 2026 university documents.
 
+*Version 1.3 — see [`docs/change_log.md`](docs/change_log.md) for what changed since version 1.0.*
+
 ## Problem Statement
 
 UTM students may need to consult multiple university webpages and documents to find information about academic calendars, course registration, academic regulations, and student services. Although official information is available, it is distributed across different sources, making it less convenient to locate relevant answers. UniGuide AI uses retrieval-augmented generation (RAG) to provide answers grounded in official UTM documents, with source citations and a fallback when sufficient evidence is unavailable.
@@ -50,7 +52,7 @@ UTM full-time bachelor's degree students (new and continuing) who need to find i
 | S08 | FAQ UTMID | Service answers | Updated 29 Sep 2026 |
 
 Retired from version 1.0: S03 (2010 advising handbook, quarantined as outdated) and S04 (new-student manual, dropped as image-heavy and overlapping S05).
-Document URLs for S01, S02, S05–S08 are recorded in the data inventory.
+Document URLs for S01, S02, S05–S09 are recorded in the data inventory.
 
 
 ## Weekly Progress
@@ -59,7 +61,8 @@ Document URLs for S01, S02, S05–S08 are recorded in the data inventory.
 |---|---|---|---|
 | W1 | System map + project scope | `docs/week1_observation_sheet.md`, `docs/week1_system_map.png`, `docs/week1_project_scope_version1.3.md` | ✅ (scope updated in v1.3) |
 | W2 | Requirements, evaluation criteria, architecture | `docs/week2_requirements_version1.3.md`, `docs/week2_evaluation_criteria_version1.1.md`, `docs/week2_architecture_decisions_version1.3.md`, `docs/week2_architecture_v1.png` | ✅ (updated in v1.1) |
-| W3 | Data inventory + prepared data pipeline | `docs/week3_data_inventory_version1.3.md`, `docs/week3_pipeline_decisions_version1.3.md`, `docs/week3_pipeline_diagram_version1.3.drawio`, `notebooks/week3_pipeline_version1.3.ipynb`, manifests | ✅ (rebuilt on the new dataset) |
+| W3 | Data inventory + prepared data pipeline | `docs/week3_data_inventory_version1.3.md`, `docs/week3_pipeline_decisions_version1.3.md`, `docs/week3_pipeline_diagram_version1.3.png`, `notebooks/week3_pipeline_version1.3.ipynb`, manifests | ✅ (rebuilt on the new dataset) |
+| — | Change log | [`docs/change_log.md`](docs/change_log.md) | ✅ |
 
 
 ## Repository Structure
@@ -67,6 +70,6 @@ Document URLs for S01, S02, S05–S08 are recorded in the data inventory.
 ```
 README.md
 docs/        week1_*, week2_*, week3_*  (this version: *_version1.3.*)
-notebooks/   week3_pipeline_version1.3.ipynb      (folder renamed from notebook/)
+notebooks/   week3_pipeline_version1.3.ipynb      
 data/        week3_manifest_version1.3.json, processed/prepared_text_version1.3.jsonl,  pipeline_v1/documents/pipeline_manifest_version1.3.json, prepared_text_version1.3.jsonl
 ```

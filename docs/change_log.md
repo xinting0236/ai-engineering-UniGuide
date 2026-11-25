@@ -53,7 +53,7 @@ Dataset facts recorded as known issues: S02 Art. 13 (Dean approval above 18 cred
 | Chunks | 238 | 260 (S09 adds 22) |
 | S02 share of characters | 86.2% | 82.9% |
 | Chunks under 50 characters | 6 | 7 (`S09-p003-02`, the short "Revision Period" row) |
-| Prepared file size (student's Colab run) | — | 393,904 bytes |
+| Prepared file size (student's Colab run) | — | 393,807 bytes |
 
 - **Source URLs and retrieval dates** recorded for all seven sources (notebook Cell 5A0, data inventory, scope). S01 and S05 `doc_date_basis` now cite the file name (session 2026/2027).
 - **Files regenerated:** README, scope (source table), requirements (source count and semester note), architecture decisions (source count), data inventory, pipeline decisions, diagram, notebook, manifests, prepared text. Evaluation criteria remain at version 1.1.

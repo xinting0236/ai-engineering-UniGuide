@@ -67,7 +67,7 @@ UniGuide AI addresses this practical gap by integrating semantic document retrie
 
 ## Target Users
 
-UTM undergraduate students, particularly new students and students who need information about academic calendars, course registration, academic regulations, and university student services.
+UTM full-time bachelor's degree students, both new and continuing, who need information about academic dates, course registration, academic regulations, and matric card / UTMID services.
 
 The initial version will focus on publicly accessible information and will not provide personalised academic decisions or access to private student records.
 
@@ -103,7 +103,7 @@ UniGuide AI will initially prioritise finding and explaining information in offi
 
 **Risk 2 — Outdated information:** Academic calendars, registration dates, and university policies may change. Answers based on old documents could mislead students.
 
-**Mitigation:** Record document versions and update dates, prioritise current official sources, and display the source date when available. Flag information that has not been verified as current. Tag time-bound sources (S06 covers Semester I 2026/2027 only) with `valid_until`, and tell the student when a deadline in the retrieved passage is already past.
+**Mitigation:**  Record document versions and update dates, prioritise current official sources, and display the source date when available. Flag information that has not been verified as current. Tag time-bound sources (S06 covers Semester I 2026/2027 only) with `valid_until`, and tell the student when a deadline in the retrieved passage is already past.
 
 **Risk 3 — Unequal answer quality:** Some student questions may be answered less accurately because of ambiguous wording, unfamiliar terminology, or insufficient coverage in the knowledge base.
 
