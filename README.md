@@ -62,14 +62,30 @@ Document URLs for S01, S02, S05–S09 are recorded in the data inventory.
 | W1 | System map + project scope | `docs/week1_observation_sheet.md`, `docs/week1_system_map.png`, `docs/week1_project_scope_version1.3.md` | ✅ (scope updated in v1.3) |
 | W2 | Requirements, evaluation criteria, architecture | `docs/week2_requirements_version1.3.md`, `docs/week2_evaluation_criteria_version1.1.md`, `docs/week2_architecture_decisions_version1.3.md`, `docs/week2_architecture_v1.png` | ✅ (updated in v1.1) |
 | W3 | Data inventory + prepared data pipeline | `docs/week3_data_inventory_version1.3.md`, `docs/week3_pipeline_decisions_version1.3.md`, `docs/week3_pipeline_diagram_version1.3.png`, `notebooks/week3_pipeline_version1.3.ipynb`, manifests | ✅ (rebuilt on the new dataset) |
+W4 | Data quality, bias and responsible data | `notebooks/week4_quality.ipynb`, `data/chunks_clean.pkl`, `data/prepared_chunks_clean.jsonl`, `docs/week4_data_quality_report.md`, `docs/week4_validation_failures.csv`, `docs/week4_duplicate_review.csv`, `docs/week4_coverage_by_source.png` | ✅ GO WITH CONDITIONS |
 | — | Change log | [`docs/change_log.md`](docs/change_log.md) | ✅ |
+
+
+## Data used by later topics (Topic 4 quality gate)
+
+**Topic 7 (indexing and retrieval) must load the reviewed corpus:** 
+data/chunks_clean.pkl (246 LangChain Document objects) or data/prepared_chunks_clean.jsonl. Do not use chunks.pkl or prepared_chunks.jsonl (260 chunks, they still contain front matter and staff names).
+
+- The 14 chunks removed from the Topic 3 output (S02 cover, copyright, contents and contributor names) are kept for review in data/prepared_chunks_quarantine.jsonl. This file contains staff names and is not committed to the repository.
+- 22 retained chunks carry a quality_flag in their metadata; 11 chunks carry manual_check (checked against the PDF page images).
+- Quality gate decision: GO WITH CONDITIONS (see docs/week4_data_quality_report.md, Section 8). Conditions for Topic 7: name the semester and show the source date in every schedule answer; apply the source precedence rule or show both sources when they conflict; show the year or printed month where the exact day is not printed; use the fallback for questions that depend on screenshots that are not indexed.
+- Refresh rule: re-run the Topic 3 pipeline and the Topic 4 notebook when AMD publishes a new schedule, before 21 Mar 2027 (S06) and before 3 Oct 2027 (S01, S09).
+- Rights: S02 is a UTM Press publication with a copyright notice; permission is to be confirmed before the full S02 text is published.
 
 
 ## Repository Structure
 
 ```
 README.md
-docs/        week1_*, week2_*, week3_*  (this version: *_version1.3.*)
-notebooks/   week3_pipeline_version1.3.ipynb      
-data/        week3_manifest_version1.3.json, processed/prepared_text_version1.3.jsonl,  pipeline_v1/documents/pipeline_manifest_version1.3.json, prepared_text_version1.3.jsonl
+docs/        week1_*, week2_*, week3_*  (*_version1.3.*), week4_data_quality_report.md,
+             week4_validation_failures.csv, week4_duplicate_review.csv, week4_coverage_by_source.png
+notebooks/   week3_pipeline_version1.3.ipynb, week4_quality.ipynb
+data/        week3_manifest_version1.3.json, processed/prepared_text_version1.3.jsonl,
+             pipeline_v1/documents/pipeline_manifest_version1.3.json, prepared_text_version1.3.jsonl,
+             chunks_clean.pkl, prepared_chunks_clean.jsonl (Topic 4 reviewed corpus, 246 chunks)
 ```

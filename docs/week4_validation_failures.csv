@@ -1,0 +1,58 @@
+﻿schema_context,column,check,check_number,failure_case,index,rule,record_id,source_id
+Column,char_count,R3 chunk shorter than 50 characters (review),0,24,5,R3,S02-p004-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,27,R6,S02-p019-02,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,188,R6,S05-p001-01,S05
+Column,missing_section,R6 section label missing (citation locator),0,1,189,R6,S05-p002-01,S05
+Column,missing_section,R6 section label missing (citation locator),0,1,190,R6,S05-p003-01,S05
+Column,missing_section,R6 section label missing (citation locator),0,1,191,R6,S05-p004-01,S05
+Column,missing_section,R6 section label missing (citation locator),0,1,192,R6,S05-p005-01,S05
+Column,missing_section,R6 section label missing (citation locator),0,1,193,R6,S05-p006-01,S05
+Column,missing_section,R6 section label missing (citation locator),0,1,194,R6,S05-p007-01,S05
+Column,missing_section,R6 section label missing (citation locator),0,1,195,R6,S05-p008-01,S05
+Column,missing_section,R6 section label missing (citation locator),0,1,196,R6,S05-p009-01,S05
+Column,missing_section,R6 section label missing (citation locator),0,1,197,R6,S05-p010-01,S05
+Column,private_use_glyph,R7 private-use symbol glyph in text,0,1,153,R7,S02-p069-01,S02
+Column,private_use_glyph,R7 private-use symbol glyph in text,0,1,154,R7,S02-p069-02,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,5,R8,S02-p004-01,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,6,R8,S02-p005-01,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,7,R8,S02-p005-02,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,8,R8,S02-p005-03,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,9,R8,S02-p006-01,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,10,R8,S02-p007-01,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,11,R8,S02-p007-02,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,12,R8,S02-p007-03,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,13,R8,S02-p008-01,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,14,R8,S02-p008-02,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,15,R8,S02-p009-01,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,16,R8,S02-p010-01,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,17,R8,S02-p012-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,28,R6,S02-p019-03,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,26,R6,S02-p019-01,S02
+Column,char_count,R3 chunk shorter than 50 characters (review),0,11,10,R3,S02-p007-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,25,R6,S02-p018-03,S02
+Column,char_count,R3 chunk shorter than 50 characters (review),0,37,21,R3,S02-p016-02,S02
+Column,char_count,R3 chunk shorter than 50 characters (review),0,15,154,R3,S02-p069-02,S02
+Column,char_count,R3 chunk shorter than 50 characters (review),0,45,161,R3,S02-p071-04,S02
+Column,char_count,R3 chunk shorter than 50 characters (review),0,49,195,R3,S05-p008-01,S05
+Column,char_count,R3 chunk shorter than 50 characters (review),0,45,238,R3,S09-p003-02,S09
+Column,missing_section,R6 section label missing (citation locator),0,1,5,R6,S02-p004-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,6,R6,S02-p005-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,7,R6,S02-p005-02,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,8,R6,S02-p005-03,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,9,R6,S02-p006-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,10,R6,S02-p007-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,11,R6,S02-p007-02,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,12,R6,S02-p007-03,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,13,R6,S02-p008-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,14,R6,S02-p008-02,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,15,R6,S02-p009-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,16,R6,S02-p010-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,17,R6,S02-p012-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,18,R6,S02-p012-02,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,19,R6,S02-p014-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,20,R6,S02-p016-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,21,R6,S02-p016-02,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,22,R6,S02-p017-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,23,R6,S02-p018-01,S02
+Column,missing_section,R6 section label missing (citation locator),0,1,24,R6,S02-p018-02,S02
+Column,front_matter,"R8 front matter, not policy content",0,1,18,R8,S02-p012-02,S02
